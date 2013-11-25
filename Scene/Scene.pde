@@ -431,7 +431,7 @@ class MyParticle extends Particle{
                                     .accel(0,0))
         .size(new Size().init(40))
         .emitter(new Emitter().clr(new Color().hsba(320,20,50, 100))
-                              .location(new LinearLocation().init(0,0).velocity(2,2).accel(0,.5))
+                              .location(new LinearLocation().init(0,0).velocity(0,5).accel(0,.75))
                               .size(new MySize().init(25))
                               .life(new Life().span(40))
                               .streams(8)
@@ -444,12 +444,11 @@ MeleScene scene;
 
 void setup() {
   scene = new MeleScene();
-  int quart = width/4;
-  scene.particles.add(new MyParticle(quart, quart));
-  scene.particles.add(new MyParticle(quart*3, quart*3));
-  scene.particles.add(new MyParticle(quart*2, quart*2));
-  scene.particles.add(new MyParticle(quart, quart*3));
-  scene.particles.add(new MyParticle(quart*3, quart));
+  int quarter = width/4;
+  for(int i=1;i<4;i++){
+    scene.particles.add(new MyParticle(i*quarter, 70));
+    scene.particles.add(new MyParticle(i*quarter, 70+quarter));
+  }
 }
 
 void draw() {
