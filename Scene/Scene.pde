@@ -319,7 +319,7 @@ class Emitter {
 
   void update(Particle parent) {
     
-    if (frameCount % 10 == 0) {
+    if (frameCount % 1 == 0) {
       addParticles(parent);
     }
   }
@@ -425,16 +425,16 @@ class MyParticle extends Particle{
   MyParticle(int x,int y){
     super();
     
-    this.clr(new Color().hsba(20,20,50, 10))
+    this.clr(new Color().hsba(320,20,50, 20))
         .location(new LinearLocation().init(x,y)
                                     .velocity(0,-.01)
                                     .accel(0,0))
-        .size(new Size().init(10))
+        .size(new Size().init(40))
         .emitter(new Emitter().clr(new Color().hsba(320,20,50, 100))
                               .location(new LinearLocation().init(0,0).velocity(2,2).accel(0,.5))
-                              .size(new MySize().init(50))
-                              .life(new Life().span(50))
-                              .streams(16)
+                              .size(new MySize().init(25))
+                              .life(new Life().span(40))
+                              .streams(8)
                               .rotation(new MyRotation()))
         .life(new ImmortalLife());
   }
