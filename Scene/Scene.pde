@@ -2,7 +2,7 @@ class MeleScene{
   ArrayList<Particle> particles = new ArrayList<Particle>();
 
   MeleScene(){
-    size(1800,1800,P2D);
+    size(800,800,P2D);
     colorMode(RGB, 360, 100, 100, 100);
     background(0);
   }
