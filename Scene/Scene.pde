@@ -2,7 +2,7 @@ class MeleScene{
   ArrayList<Particle> particles = new ArrayList<Particle>();
 
   MeleScene(){
-    size(800,800,P2D);
+    size(1800,1800,P2D);
     colorMode(RGB, 360, 100, 100, 100);
     background(0);
   }
@@ -447,7 +447,7 @@ void setup() {
   int quarter = width/4;
   for(int i=1;i<4;i++){
     scene.particles.add(new MyParticle(i*quarter, 70));
-    scene.particles.add(new MyParticle(i*quarter, 70+quarter));
+    scene.particles.add(new MyParticle(i*quarter, 70+quarter/2));
   }
 }
 
