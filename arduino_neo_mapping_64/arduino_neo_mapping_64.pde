@@ -20,12 +20,12 @@ int r = d/2;
 int centerX = r;
 int centerY = r;
 float circ = d * PI;
-int steps = 64;
+int steps = 16;
 
 
 
 void setup(){
-  port = new Serial(this, Serial.list()[5], 57600);
+  port = new Serial(this, Serial.list()[5], 19200);
   size(640,480);
   shapeMode(CENTER);
   centerX = 640/2;
@@ -62,7 +62,7 @@ void updateNeo(){
     
     fill( clr );
     stroke(clr);
-      ellipse( x, y, 25, 25 );
+      ellipse( x, y, 10, 10 );
     
     if(count % 1 == 0){
       //first byte in a color is alpha, which we don't both sending over
@@ -86,7 +86,7 @@ void updateNeo(){
   }
   count++;
   //println(sb.toString());
-  //port.write(sb.toString());
+  port.write("D");
 }
 
 
